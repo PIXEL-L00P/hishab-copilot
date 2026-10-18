@@ -1,0 +1,41 @@
+business_id,name,category,district,area,founded,owner_is_woman,has_collateral,has_trade_license,staff,synthetic
+1,Style Corner,clothing_retail,Dhaka,Mirpur,2019-03-01,1,0,1,5,1
+2,Rongdhonu Collection,clothing_retail,Dhaka,Bashundhara,2008-04-18,1,1,1,7,1
+3,Rongdhonu Bazar,clothing_retail,Dhaka,Jatrabari,2010-04-14,1,0,1,7,1
+4,Rongdhonu Garments,clothing_retail,Dhaka,Bashundhara,2020-03-08,0,1,1,6,1
+5,Notun Style House,clothing_retail,Dhaka,Jatrabari,2016-08-27,0,0,1,5,1
+6,Chandrima Fashion,clothing_retail,Dhaka,Badda,2018-01-27,0,0,0,5,1
+7,Bokul Boutique,clothing_retail,Dhaka,Jatrabari,2020-08-07,0,0,1,7,1
+8,Rupkotha Boutique,clothing_retail,Dhaka,Farmgate,2020-01-28,1,1,1,7,1
+9,Meghna Garments,clothing_retail,Dhaka,Jatrabari,2014-02-22,1,1,1,7,1
+10,Aarong-e Bazar,clothing_retail,Dhaka,Jatrabari,2011-02-17,0,0,1,3,1
+11,Notun Collection,clothing_retail,Dhaka,Banani,2019-11-25,0,0,0,6,1
+12,Rupkotha Style House,clothing_retail,Dhaka,Bashundhara,2008-10-05,0,1,1,6,1
+13,Rupkotha Collection,clothing_retail,Dhaka,Farmgate,2020-11-06,0,0,1,2,1
+14,Bokul Style House,clothing_retail,Dhaka,Dhanmondi,2020-10-26,0,1,1,3,1
+15,Nakshi Fashion,clothing_retail,Dhaka,Mohammadpur,2021-09-28,0,0,1,2,1
+16,Rongdhonu Boutique,clothing_retail,Dhaka,Banani,2021-01-13,0,1,1,5,1
+17,Shonali Collection,clothing_retail,Dhaka,Dhanmondi,2017-08-09,0,0,1,4,1
+18,Bokul Fashion,clothing_retail,Dhaka,Uttara,2012-10-02,0,1,1,6,1
+19,Nabila Bazar,clothing_retail,Dhaka,Chawkbazar,2012-03-16,0,0,1,7,1
+20,Meghna Collection,clothing_retail,Dhaka,Mirpur,2019-11-23,0,0,0,6,1
+21,Nabila Cloth Store,clothing_retail,Dhaka,Dhanmondi,2015-06-17,0,0,1,2,1
+22,Rupkotha Cloth Store,clothing_retail,Dhaka,Banani,2022-03-09,0,0,1,6,1
+23,Chandrima Bazar,clothing_retail,Dhaka,Dhanmondi,2008-04-04,0,0,1,3,1
+24,Bokul Bazar,clothing_retail,Dhaka,Jatrabari,2015-06-09,0,0,1,7,1
+25,Shapla Fashion,clothing_retail,Dhaka,Jatrabari,2013-08-20,1,0,1,2,1
+26,Aarong-e Collection,clothing_retail,Dhaka,Chawkbazar,2022-04-13,0,0,1,3,1
+27,Shonali Bazar,clothing_retail,Dhaka,Farmgate,2011-01-06,1,1,1,3,1
+28,Meghna Bazar,clothing_retail,Dhaka,Bashundhara,2010-11-26,0,0,1,3,1
+29,Ruposhi Fashion,clothing_retail,Dhaka,Mohammadpur,2020-09-25,0,0,1,3,1
+30,Shapla Style House,clothing_retail,Dhaka,Mohammadpur,2010-05-19,0,0,1,8,1
+31,Rupkotha Garments,clothing_retail,Dhaka,Mirpur,2013-01-29,1,0,0,2,1
+32,Ruposhi Cloth Store,clothing_retail,Dhaka,Banani,2011-06-20,0,1,1,3,1
+33,Shonali Boutique,clothing_retail,Dhaka,Chawkbazar,2019-06-08,0,1,0,6,1
+34,Aarong-e Boutique,clothing_retail,Dhaka,Mirpur,2021-04-15,0,1,1,5,1
+35,Aarong-e Fashion,clothing_retail,Dhaka,Chawkbazar,2020-10-15,0,1,1,3,1
+36,Rupkotha Fashion,clothing_retail,Dhaka,Uttara,2022-03-26,1,0,1,2,1
+37,Ruposhi Boutique,clothing_retail,Dhaka,Mirpur,2015-03-06,1,0,1,4,1
+38,Notun Cloth Store,clothing_retail,Dhaka,Mirpur,2016-03-08,0,0,1,8,1
+39,Doel Fashion,clothing_retail,Dhaka,Dhanmondi,2014-12-09,0,1,1,4,1
+40,Shonali Fashion,clothing_retail,Dhaka,Mohammadpur,2023-01-15,0,0,1,4,1

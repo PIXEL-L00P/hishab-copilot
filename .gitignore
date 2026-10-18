@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+# local database: rebuilt by `python scripts/seed_db.py` (the server also creates it on first start)
+data/hishab.db
+data/hishab.db-journal

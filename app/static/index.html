@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HishabAI — SME Finance Copilot</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">হি</span><div><strong>HishabAI</strong><small>SME Finance Copilot</small></div></div>
+  <div class="topright hidden" id="topright">
+    <span id="bizName"></span>
+    <span class="badge" id="roleBadge"></span>
+    <button class="ghost" id="langBtn" title="Switch agent language">বাংলা</button>
+    <button class="ghost" id="logoutBtn">Log out</button>
+  </div>
+</header>
+
+<div class="synthetic">Prototype with <b>synthetic demo data</b>. The agent never moves money; messages go to a sandbox outbox.</div>
+
+<main>
+  <!-- LOGIN -->
+  <section id="loginView" class="card login">
+    <h1>Sign in</h1>
+    <p class="muted">Demo accounts (synthetic data):</p>
+    <div class="demo-users">
+      <button data-u="farhana" data-p="StyleCorner#2026">Owner · Farhana</button>
+      <button data-u="rakib" data-p="Accounts#2026">Accountant · Rakib</button>
+      <button data-u="lender_demo" data-p="LenderDesk#2026">Lender · Demo Bank</button>
+    </div>
+    <form id="loginForm">
+      <label>Username <input id="username" autocomplete="username" required maxlength="64"></label>
+      <label>Password <input id="password" type="password" autocomplete="current-password" required maxlength="128"></label>
+      <button type="submit" class="primary">Sign in</button>
+      <p class="error" id="loginError"></p>
+    </form>
+  </section>
+
+  <!-- OWNER / ACCOUNTANT -->
+  <section id="appView" class="hidden">
+    <div class="alert" id="alertBox">
+      <div><strong id="alertTitle">Checking cash flow…</strong><div id="alertText" class="muted"></div></div>
+      <button class="primary" id="checkBtn">Run cash check</button>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2>Sales: last 26 weeks and AI forecast</h2>
+        <div id="salesChart" class="chart"></div>
+        <p class="muted small" id="forecastNote"></p>
+      </div>
+      <div class="card">
+        <h2>Cash projection (next 8 weeks)</h2>
+        <div id="cashChart" class="chart"></div>
+        <p class="muted small">Dashed line = safety buffer. The green line appears after a payment plan is drafted.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How you compare with similar shops</h2>
+      <p class="muted small" id="benchNote"></p>
+      <div id="benchmark"><p class="muted">Loading…</p></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card agent">
+        <h2>Agent briefing</h2>
+        <pre id="briefing" class="briefing">Press “Run cash check” to let the agent analyse the next 8 weeks.</pre>
+        <h3>Waiting for approval</h3>
+        <div id="pending" class="pending"><p class="muted">Nothing pending.</p></div>
+        <h3>Ask HishabAI</h3>
+        <div id="chatLog" class="chatlog"></div>
+        <form id="chatForm" class="chatform">
+          <input id="chatInput" maxlength="2000" placeholder="e.g. Can I afford a second shop?  /  নতুন দোকান খুললে কী হবে?">
+          <button class="primary">Send</button>
+        </form>
+        <div class="chips">
+          <button data-q="Can I afford to open a second shop?">Second shop?</button>
+          <button data-q="What if sales drop 20%?">Sales −20%?</button>
+          <button data-q="Am I more profitable than similar shops?">Compare</button>
+          <button data-q="Find financing options">Financing</button>
+          <button data-q="Transfer 50000 to Nur Fabrics now">Transfer money</button>
+          <button data-q="আমার ক্যাশের অবস্থা কেমন?">ক্যাশের অবস্থা</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>What-if simulator</h2>
+        <form id="scenarioForm" class="scenario">
+          <label>Sales change (%) <input name="sales_change_pct" type="number" value="0" step="1"></label>
+          <label>Stock cost change (%) <input name="purchase_cost_change_pct" type="number" value="0" step="1"></label>
+          <label>Extra monthly costs (৳) <input name="extra_monthly_fixed" type="number" value="0" min="0" step="1000"></label>
+          <label>One-time cost (৳) <input name="one_time_cost" type="number" value="0" min="0" step="1000"></label>
+          <label>New loan (৳) <input name="loan_amount" type="number" value="0" min="0" step="10000"></label>
+          <label>Loan rate (% / year) <input name="loan_rate" type="number" value="9" min="0" max="50" step="0.5"></label>
+          <label>Loan months <input name="loan_months" type="number" value="24" min="1" max="120"></label>
+          <button class="primary">Run scenario</button>
+        </form>
+        <div id="scenarioOut" class="scenario-out"></div>
+        <h2>Financing options</h2>
+        <div id="financing"><p class="muted">Run the cash check, or ask about financing.</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <button data-tab="dues" class="active">Customer dues</button>
+        <button data-tab="bills">Bills to pay</button>
+        <button data-tab="outbox">Sandbox outbox</button>
+        <button data-tab="actions">Agent action log</button>
+        <button data-tab="audit">Audit trail</button>
+      </div>
+      <div id="tabBody"></div>
+    </div>
+  </section>
+
+  <!-- LENDER -->
+  <section id="lenderView" class="hidden">
+    <div class="card">
+      <h2>Reports shared with you</h2>
+      <p class="muted">You only see what a business owner has explicitly approved to share.</p>
+      <div id="lenderReports"></div>
+    </div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

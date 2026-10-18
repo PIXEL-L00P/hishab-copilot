@@ -1,0 +1,37 @@
+business_id,counterparty,description,amount,due_date,category,flexible,status
+1,Nur Fabrics Ltd,Winter collection stock order,380000.0,2026-11-04,supplier,1,open
+1,Rahman Garments,Shawl and cardigan order,120000.0,2026-11-12,supplier,1,open
+1,Bhai Bhai Decorators,Shop front renovation,60000.0,2026-10-28,other,1,open
+1,City Corporation,Trade licence renewal,12000.0,2026-11-18,tax,0,open
+3,Keraniganj Apparel,Winter collection stock order,358000.0,2026-11-05,supplier,1,open
+5,Narsingdi Weavers,Winter collection stock order,215000.0,2026-11-08,supplier,1,open
+7,Narsingdi Weavers,Winter collection stock order,454000.0,2026-11-22,supplier,1,open
+8,City Corporation,Trade licence renewal,5000.0,2026-11-26,tax,0,open
+11,City Corporation,Trade licence renewal,13000.0,2026-11-15,tax,0,open
+13,Tangail Saree Kutir,Winter collection stock order,575000.0,2026-11-08,supplier,1,open
+13,City Corporation,Trade licence renewal,12000.0,2026-11-20,tax,0,open
+14,Tangail Saree Kutir,Winter collection stock order,330000.0,2026-11-18,supplier,1,open
+15,Tangail Saree Kutir,Winter collection stock order,360000.0,2026-11-07,supplier,1,open
+15,City Corporation,Trade licence renewal,10000.0,2026-10-29,tax,0,open
+17,Nur Fabrics Ltd,Winter collection stock order,473000.0,2026-10-29,supplier,1,open
+17,City Corporation,Trade licence renewal,10000.0,2026-10-28,tax,0,open
+19,Islampur Cloth House,Winter collection stock order,509000.0,2026-11-11,supplier,1,open
+19,City Corporation,Trade licence renewal,7000.0,2026-10-29,tax,0,open
+20,Tangail Saree Kutir,Winter collection stock order,841000.0,2026-11-02,supplier,1,open
+22,Islampur Cloth House,Winter collection stock order,139000.0,2026-11-08,supplier,1,open
+22,City Corporation,Trade licence renewal,12000.0,2026-11-05,tax,0,open
+26,City Corporation,Trade licence renewal,6000.0,2026-11-08,tax,0,open
+28,Narsingdi Weavers,Winter collection stock order,469000.0,2026-11-24,supplier,1,open
+29,Nur Fabrics Ltd,Winter collection stock order,155000.0,2026-10-31,supplier,1,open
+29,City Corporation,Trade licence renewal,5000.0,2026-11-21,tax,0,open
+30,City Corporation,Trade licence renewal,7000.0,2026-11-20,tax,0,open
+31,Islampur Cloth House,Winter collection stock order,220000.0,2026-11-03,supplier,1,open
+32,Narsingdi Weavers,Winter collection stock order,413000.0,2026-11-13,supplier,1,open
+32,City Corporation,Trade licence renewal,6000.0,2026-11-02,tax,0,open
+33,City Corporation,Trade licence renewal,11000.0,2026-11-16,tax,0,open
+34,Rahman Garments,Winter collection stock order,167000.0,2026-11-18,supplier,1,open
+35,City Corporation,Trade licence renewal,10000.0,2026-12-04,tax,0,open
+36,Nur Fabrics Ltd,Winter collection stock order,364000.0,2026-11-16,supplier,1,open
+37,City Corporation,Trade licence renewal,11000.0,2026-11-16,tax,0,open
+38,Rahman Garments,Winter collection stock order,296000.0,2026-11-19,supplier,1,open
+39,City Corporation,Trade licence renewal,14000.0,2026-11-08,tax,0,open

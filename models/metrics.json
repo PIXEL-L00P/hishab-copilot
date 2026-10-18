@@ -1,0 +1,166 @@
+{
+  "trained_at": "2026-10-18 01:08",
+  "data": "synthetic (data/generate_synthetic.py)",
+  "train_rows": 21720,
+  "test_period_start": "2025-10-13",
+  "conformal_margin_log": 0.08210389719755892,
+  "evaluation": [
+    {
+      "set": "Unseen shops, test year",
+      "n_forecasts": 4240,
+      "metrics": {
+        "HishabAI model (GBT)": {
+          "WAPE": 0.1247,
+          "MAE_BDT": 23124.0,
+          "WAPE_pre_Eid_weeks": 0.1201
+        },
+        "Baseline: last week": {
+          "WAPE": 0.2344,
+          "MAE_BDT": 43466.0,
+          "WAPE_pre_Eid_weeks": 0.3598
+        },
+        "Baseline: 4-week mean": {
+          "WAPE": 0.2091,
+          "MAE_BDT": 38777.0,
+          "WAPE_pre_Eid_weeks": 0.3627
+        },
+        "Baseline: seasonal naive": {
+          "WAPE": 0.2425,
+          "MAE_BDT": 44970.0,
+          "WAPE_pre_Eid_weeks": 0.3532
+        }
+      },
+      "interval_coverage_target": 0.8,
+      "interval_coverage": 0.879,
+      "interval_coverage_before_calibration": 0.716,
+      "wape_by_horizon": {
+        "1": {
+          "model": 0.1204,
+          "best_baseline": 0.1627
+        },
+        "2": {
+          "model": 0.1273,
+          "best_baseline": 0.1928
+        },
+        "3": {
+          "model": 0.1269,
+          "best_baseline": 0.209
+        },
+        "4": {
+          "model": 0.1266,
+          "best_baseline": 0.2192
+        },
+        "5": {
+          "model": 0.1246,
+          "best_baseline": 0.2216
+        },
+        "6": {
+          "model": 0.1242,
+          "best_baseline": 0.2224
+        },
+        "7": {
+          "model": 0.1227,
+          "best_baseline": 0.2189
+        },
+        "8": {
+          "model": 0.1251,
+          "best_baseline": 0.217
+        }
+      }
+    },
+    {
+      "set": "Training shops, test year",
+      "n_forecasts": 12720,
+      "metrics": {
+        "HishabAI model (GBT)": {
+          "WAPE": 0.1314,
+          "MAE_BDT": 28823.0,
+          "WAPE_pre_Eid_weeks": 0.1358
+        },
+        "Baseline: last week": {
+          "WAPE": 0.2511,
+          "MAE_BDT": 55075.0,
+          "WAPE_pre_Eid_weeks": 0.3736
+        },
+        "Baseline: 4-week mean": {
+          "WAPE": 0.2206,
+          "MAE_BDT": 48387.0,
+          "WAPE_pre_Eid_weeks": 0.3778
+        },
+        "Baseline: seasonal naive": {
+          "WAPE": 0.2451,
+          "MAE_BDT": 53748.0,
+          "WAPE_pre_Eid_weeks": 0.3432
+        }
+      },
+      "interval_coverage_target": 0.8,
+      "interval_coverage": 0.87,
+      "interval_coverage_before_calibration": 0.709,
+      "wape_by_horizon": {
+        "1": {
+          "model": 0.1245,
+          "best_baseline": 0.1763
+        },
+        "2": {
+          "model": 0.1314,
+          "best_baseline": 0.2104
+        },
+        "3": {
+          "model": 0.1335,
+          "best_baseline": 0.2209
+        },
+        "4": {
+          "model": 0.1347,
+          "best_baseline": 0.2293
+        },
+        "5": {
+          "model": 0.132,
+          "best_baseline": 0.2332
+        },
+        "6": {
+          "model": 0.1313,
+          "best_baseline": 0.2317
+        },
+        "7": {
+          "model": 0.1322,
+          "best_baseline": 0.2265
+        },
+        "8": {
+          "model": 0.1318,
+          "best_baseline": 0.2229
+        }
+      }
+    }
+  ],
+  "features": [
+    "h",
+    "lag0",
+    "lag1",
+    "lag2",
+    "lag3",
+    "mean4",
+    "mean26",
+    "trend12",
+    "yoy_ratio",
+    "origin_days_to_fitr",
+    "origin_days_since_fitr",
+    "tgt_days_to_fitr",
+    "tgt_days_since_fitr",
+    "tgt_days_to_adha",
+    "tgt_days_since_adha",
+    "tgt_fitr_week",
+    "tgt_adha_week",
+    "tgt_boishakh_week",
+    "tgt_month"
+  ],
+  "params": {
+    "max_iter": 400,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 40,
+    "l2_regularization": 1.0,
+    "random_state": 7
+  },
+  "final_model_rows": 45920,
+  "train_seconds": 21.8
+}

@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#fff;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+text{font-family:inherit}
+</style></head><body>
+<svg id="d" width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5a52"/></marker></defs>
+<style>.box{fill:#fff;stroke:#9aa8a0;stroke-width:1.5}.t{font-size:16px;font-weight:700;fill:#1b2a24}.s{font-size:12.5px;fill:#4a5a52}.l{stroke:#4a5a52;stroke-width:1.6;fill:none;marker-end:url(#a)}.lab{font-size:12px;fill:#4a5a52}</style>
+<text x="30" y="36" font-size="22" font-weight="700" fill="#0b6e4f">HishabAI — system architecture</text>
+<!-- users -->
+<rect x="30" y="70" width="250" height="160" rx="12" fill="#f4f6f3" stroke="#c9d3cc"/>
+<text x="48" y="96" class="t">Users (browser)</text>
+<text x="48" y="124" class="s">• Owner: everything + approvals</text>
+<text x="48" y="146" class="s">• Accountant: records, analysis</text>
+<text x="48" y="168" class="s">• Lender: only reports the owner</text>
+<text x="62" y="186" class="s">  approved to share</text>
+<text x="48" y="212" class="s">English / বাংলা</text>
+<!-- api -->
+<rect x="340" y="70" width="300" height="160" rx="12" class="box"/>
+<text x="358" y="96" class="t">Web API (app/server.py)</text>
+<text x="358" y="124" class="s">• Session auth (PBKDF2, hashed tokens)</text>
+<text x="358" y="146" class="s">• Role check on every business call</text>
+<text x="358" y="168" class="s">• Input validation, body limits</text>
+<text x="358" y="190" class="s">• CSP + security headers</text>
+<text x="358" y="212" class="s">• Generic errors (no internals leaked)</text>
+<path d="M280 150 L336 150" class="l"/>
+<!-- gateway -->
+<rect x="700" y="60" width="470" height="200" rx="12" fill="#fff4e0" stroke="#e0b860" stroke-width="2"/>
+<text x="718" y="88" class="t">Agent + permission gateway (app/agent.py)</text>
+<text x="718" y="114" class="s">Every action passes through one function: call_tool()</text>
+<rect x="718" y="126" width="210" height="28" rx="6" fill="#e9f0fb"/><text x="728" y="145" class="s">Tier 0  read / analyse → runs</text>
+<rect x="940" y="126" width="215" height="28" rx="6" fill="#eef1ef"/><text x="950" y="145" class="s">Tier 1  draft → runs as draft</text>
+<rect x="718" y="162" width="210" height="28" rx="6" fill="#ffe7b8"/><text x="728" y="181" class="s">Tier 2  external → owner OKs</text>
+<rect x="940" y="162" width="215" height="28" rx="6" fill="#fdecea"/><text x="950" y="181" class="s">Tier 3  money → always blocked</text>
+<text x="718" y="214" class="s">Planner: rule-based (offline) or LLM tool-use (optional).</text>
+<text x="718" y="236" class="s">Either way the LLM can only request tools; the gateway decides.</text>
+<path d="M640 150 L696 150" class="l"/>
+<!-- engines row -->
+<rect x="30" y="330" width="270" height="190" rx="12" class="box"/>
+<text x="48" y="356" class="t">Forecast model</text>
+<text x="48" y="380" class="s">app/forecast.py · ml/train_forecast.py</text>
+<text x="48" y="404" class="s">• Gradient-boosted trees (P50)</text>
+<text x="48" y="426" class="s">• Quantile models P10/P90 +</text>
+<text x="62" y="446" class="s">conformal calibration (80% band)</text>
+<text x="48" y="468" class="s">• Eid / Boishakh calendar features</text>
+<text x="48" y="490" class="s">• Error 12.5% vs 20.9% best baseline</text>
+<rect x="330" y="330" width="270" height="190" rx="12" class="box"/>
+<text x="348" y="356" class="t">Financial engine</text>
+<text x="348" y="380" class="s">app/finance_engine.py</text>
+<text x="348" y="404" class="s">• Margin, break-even, DSCR, runway</text>
+<text x="348" y="426" class="s">• Week-by-week cash projection</text>
+<text x="348" y="448" class="s">• Alert levels (healthy/warning/critical)</text>
+<text x="348" y="470" class="s">• What-if scenarios</text>
+<text x="348" y="492" class="s">• Peer benchmark (k ≥ 5, anonymised)</text>
+<rect x="630" y="330" width="260" height="190" rx="12" class="box"/>
+<text x="648" y="356" class="t">Payment planner</text>
+<text x="648" y="380" class="s">app/planner.py</text>
+<text x="648" y="404" class="s">• Finds first tight week</text>
+<text x="648" y="426" class="s">• Moves flexible supplier bills ≤4 wks</text>
+<text x="648" y="448" class="s">• Never salaries, rent, tax, loans</text>
+<text x="648" y="470" class="s">• Reminders for overdue dues</text>
+<text x="648" y="492" class="s">• Remaining gap → financing need</text>
+<rect x="920" y="330" width="250" height="190" rx="12" class="box"/>
+<text x="938" y="356" class="t">Financing matcher</text>
+<text x="938" y="380" class="s">app/financing.py</text>
+<text x="938" y="404" class="s">• Eligibility rules per product</text>
+<text x="938" y="426" class="s">• Instalment + DSCR ≥ 1.25</text>
+<text x="938" y="448" class="s">• Arrives before the shortfall?</text>
+<text x="938" y="470" class="s">• Ranked with reasons</text>
+<text x="938" y="492" class="s">• Loan-readiness report</text>
+<path d="M935 260 C935 300 165 290 165 326" class="l"/>
+<path d="M935 260 C935 300 465 300 465 326" class="l"/>
+<path d="M935 260 L760 326" class="l"/>
+<path d="M935 260 L1045 326" class="l"/>
+<!-- db -->
+<rect x="30" y="580" width="560" height="150" rx="12" fill="#e8f3ee" stroke="#8cc4aa"/>
+<text x="48" y="606" class="t">SQLite database (app/db.py)</text>
+<text x="48" y="632" class="s">businesses · memberships(role) · weekly_records (append-only) · receivables · payables</text>
+<text x="48" y="654" class="s">loans · financing_products · users · sessions(token hash)</text>
+<text x="48" y="676" class="s">agent_actions (every tool call, tier, status, approver)</text>
+<text x="48" y="698" class="s">audit_log (SHA-256 hash chain → tamper-evident)</text>
+<text x="48" y="718" class="s">Synthetic data: 40 Dhaka clothing shops × 159 weeks</text>
+<rect x="630" y="580" width="540" height="150" rx="12" fill="#f4f6f3" stroke="#c9d3cc"/>
+<text x="648" y="606" class="t">Sandbox side-effects</text>
+<text x="648" y="632" class="s">• outbox: approved reminders / supplier requests (no real SMS)</text>
+<text x="648" y="654" class="s">• shared_reports: what a lender is allowed to see</text>
+<text x="648" y="676" class="s">• Production: swap the outbox for an SMS/WhatsApp gateway</text>
+<text x="662" y="696" class="s">and lender API, behind the same approval step</text>
+<path d="M465 520 L380 576" class="l"/>
+<path d="M1045 520 L900 576" class="l"/>
+<path d="M760 520 L560 576" class="l"/>
+</svg></body></html>
